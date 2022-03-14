@@ -63,6 +63,7 @@ let majorVersion = "10";
 
     patches =
          optional (targetPlatform != hostPlatform) ../libstdc++-target.patch
+      ++ [ ../mingw32-no-mcf-thread.diff ]
       ++ optional noSysDirs ../no-sys-dirs.patch
       /* ++ optional (hostPlatform != buildPlatform) (fetchpatch { # XXX: Refine when this should be applied
         url = "https://git.busybox.net/buildroot/plain/package/gcc/${version}/0900-remove-selftests.patch?id=11271540bfe6adafbc133caf6b5b902a816f5f02";
